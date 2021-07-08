@@ -1,0 +1,20 @@
+language: node_js
+
+sudo: required
+
+services:
+  - docker
+
+# safelist
+branches:
+  only:
+  - master
+  - /^stable.*$/
+  - /^sprint-.*$/
+
+install: true
+
+before_script:
+  - chmod +x .travis/build.sh
+
+script: .travis/build.sh
